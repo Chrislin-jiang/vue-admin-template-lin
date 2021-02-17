@@ -14,7 +14,7 @@ import Layout from '@/layout'
  * alwaysShow: true               if set true, will always show the root menu
  *                                if not set alwaysShow, when item has more than one children route,
  *                                it will becomes nested mode, otherwise not show the root menu
- * redirect: noRedirect           if set noRedirect will no redirect in the breadcrumb
+ * redirect: noRedirect           i             f set noRedirect will no redirect in the breadcrumb
  * name:'router-name'             the name is used by <keep-alive> (must set!!!)
  * meta : {
     roles: ['admin','editor']    control the page roles (you can set multiple roles)
@@ -30,8 +30,7 @@ import Layout from '@/layout'
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
-export const constantRoutes = [
-  {
+export const constantRoutes = [{
     path: '/login',
     component: () => import('@/views/login/index'),
     hidden: true
@@ -46,33 +45,144 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/hoisting-safety-evaluation',
     children: [{
-      path: 'dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      path: 'hoisting-safety-evaluation',
+      name: 'HoistingSafetyEvaluation',
+      component: () => import('@/views/hoisting-safety-evaluation/index'),
+      meta: {
+        title: '吊装安全评价系统',
+        // icon: 'dashboard'
+      }
     }]
   },
 
   {
-    path: '/example',
+    path: '/data-management',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
+    redirect: '/data-management/personnel-information',
+    name: 'DataManagement',
+    meta: {
+      title: '数据管理模块',
+      icon: 'el-icon-s-help'
+    },
+    children: [{
+        path: 'personnel-information',
+        name: 'PersonnelInformation',
+        component: () => import('@/views/personnel-information/index'),
+        meta: {
+          title: '人员信息',
+          icon: 'table'
+        }
+      },
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: {
+          title: '人员信息-Table',
+          icon: 'table'
+        }
+      },
+      {
+        path: 'facility-information',
+        name: 'FacilityInformation',
+        component: () => import('@/views/facility-information/index'),
+        meta: {
+          title: '设备信息',
+          icon: 'table'
+        }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: {
+          title: 'Tree',
+          icon: 'tree'
+        }
+      }
+    ]
+  },
+
+  {
+    path: '/evaluation-index',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'EvaluationIndex',
+      component: () => import('@/views/evaluation-index/index'),
+      meta: {
+        title: '评价指标体系',
+        icon: 'form'
+      }
+    }]
+  },
+
+  {
+    path: '/evaluation-method',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'EvaluationMethod',
+      component: () => import('@/views/evaluation-method/index'),
+      meta: {
+        title: '评价方法',
+        icon: 'form'
+      }
+    }]
+  },
+
+  {
+    path: '/evaluation-result',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'EvaluationResult',
+      component: () => import('@/views/evaluation-result/index'),
+      meta: {
+        title: '评价结果',
+        icon: 'form'
+      }
+    }]
+  },
+
+  // AuxiliaryInformation auxiliary-information StandardBase  standard-base  AccidentType  accident-type  AuxiliaryCase  auxiliary-case
+  {
+    path: '/auxiliary-information',
+    component: Layout,
+    redirect: '/auxiliary-information/standard-base',
+    name: 'AuxiliaryInformation',
+    meta: {
+      title: '辅助信息模块',
+      icon: 'el-icon-s-help'
+    },
+    children: [{
+        path: 'auxiliary-standard-base',
+        name: 'AuxiliaryStandardBase',
+        component: () => import('@/views/auxiliary-standard-base/index'),
+        meta: {
+          title: '标准库',
+          icon: 'table'
+        }
+      },
+      {
+        path: 'auxiliary-accident-type',
+        name: 'AuxiliaryAccidentType',
+        component: () => import('@/views/auxiliary-accident-type/index'),
+        meta: {
+          title: '事故类型',
+          icon: 'table'
+        }
+      },
+      {
+        path: 'auxiliary-case',
+        name: 'AuxiliaryCase',
+        component: () => import('@/views/auxiliary-case/index'),
+        meta: {
+          title: '案例',
+          icon: 'table'
+        }
       }
     ]
   },
@@ -80,93 +190,30 @@ export const constantRoutes = [
   {
     path: '/form',
     component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+    children: [{
+      path: 'index',
+      name: 'Form',
+      component: () => import('@/views/form/index'),
+      meta: {
+        title: 'Form',
+        icon: 'form'
       }
-    ]
-  },
-
-  {
-    path: '/nested',
-    component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
-    meta: {
-      title: 'Nested',
-      icon: 'nested'
-    },
-    children: [
-      {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
-      },
-      {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
-      }
-    ]
+    }]
   },
 
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+  {
+    path: '*',
+    redirect: '/404',
+    hidden: true
+  }
 ]
 
 const createRouter = () => new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({
+    y: 0
+  }),
   routes: constantRoutes
 })
 

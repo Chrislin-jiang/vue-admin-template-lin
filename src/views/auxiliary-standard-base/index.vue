@@ -43,7 +43,7 @@
         icon="el-icon-search"
         @click="handleFilter"
       >
-        Search
+        搜索
       </el-button>
       <el-button
         class="filter-item"
@@ -52,7 +52,7 @@
         icon="el-icon-edit"
         @click="handleCreate"
       >
-        Add
+        添加
       </el-button>
       <el-button
         v-waves
@@ -62,7 +62,7 @@
         icon="el-icon-download"
         @click="handleDownload"
       >
-        Export
+        导出
       </el-button>
 
     </div>
@@ -82,7 +82,7 @@
         prop="id"
         sortable="custom"
         align="center"
-        width="80"
+        width="70px"
         :class-name="getSortClass('id')"
       >
         <template slot-scope="{row}">
@@ -102,7 +102,7 @@
       <!-- 标准名称 -->
       <el-table-column
         label="标准名称"
-        min-width="150px"
+        min-width="250px"
       >
         <template slot-scope="{row}">
           <span
@@ -119,7 +119,7 @@
         align="center"
       >
         <template slot-scope="{row}">
-          <span>{{ row.standard_number }}</span>
+          <span>{{ row.category }}</span>
         </template>
       </el-table-column>
 
@@ -136,8 +136,9 @@
           />
         </template>
       </el-table-column> -->
-      <!-- 状态 -->
-      <el-table-column
+
+      <!-- 状态1 -->
+      <!-- <el-table-column
         label="Status"
         class-name="status-col"
         width="100"
@@ -147,7 +148,18 @@
             {{ row.status }}
           </el-tag>
         </template>
+      </el-table-column> -->
+      <!-- 状态2 -->
+      <el-table-column
+        label="状态"
+        width="110px"
+        align="center"
+      >
+        <template slot-scope="{row}">
+          <span>{{ row.status2 }}</span>
+        </template>
       </el-table-column>
+
       <!-- <el-table-column
         label="Readings"
         align="center"
@@ -163,27 +175,27 @@
         </template>
       </el-table-column> -->
       <el-table-column
-        label="Date"
-        width="150px"
+        label="发布日期"
+        width="130px"
         align="center"
       >
         <template slot-scope="{row}">
-          <span>{{ row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{ row.timestamp | parseTime('{y}-{m}-{d}') }}</span>
         </template>
       </el-table-column>
       <el-table-column
-        label="Date"
-        width="150px"
+        label="实施日期"
+        width="130px"
         align="center"
       >
         <template slot-scope="{row}">
-          <span>{{ row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
+          <span>{{ row.timestamp | parseTime('{y}-{m}-{d}') }}</span>
         </template>
       </el-table-column>
       <el-table-column
         label="Actions"
         align="center"
-        width="230"
+        width="230px"
         class-name="small-padding fixed-width"
       >
         <template slot-scope="{row,$index}">
@@ -192,9 +204,9 @@
             size="mini"
             @click="handleUpdate(row)"
           >
-            Edit
+            修改
           </el-button>
-          <el-button
+          <!-- <el-button
             v-if="row.status!='published'"
             size="mini"
             type="success"
@@ -208,14 +220,14 @@
             @click="handleModifyStatus(row,'draft')"
           >
             Draft
-          </el-button>
+          </el-button> -->
           <el-button
             v-if="row.status!='deleted'"
             size="mini"
             type="danger"
             @click="handleDelete(row,$index)"
           >
-            Delete
+            删除
           </el-button>
         </template>
       </el-table-column>
@@ -243,7 +255,35 @@
         style="width: 400px; margin-left:50px;"
       >
         <el-form-item
-          label="Date"
+          label="标准号"
+          prop="standard_number"
+        >
+          <el-input v-model="temp.standard_number" />
+        </el-form-item>
+
+        <el-form-item
+          label="标准名称"
+          prop="title"
+        >
+          <el-input v-model="temp.title" />
+        </el-form-item>
+
+        <el-form-item
+          label="类别"
+          prop="category"
+        >
+          <el-input v-model="temp.category" />
+        </el-form-item>
+
+        <el-form-item
+          label="状态"
+          prop="status2"
+        >
+          <el-input v-model="temp.status2" />
+        </el-form-item>
+
+        <el-form-item
+          label="发布时间"
           prop="timestamp"
         >
           <el-date-picker
@@ -252,13 +292,19 @@
             placeholder="Please pick a date"
           />
         </el-form-item>
+
         <el-form-item
-          label="标准名称"
-          prop="title"
+          label="实施时间"
+          prop="timestamp"
         >
-          <el-input v-model="temp.title" />
+          <el-date-picker
+            v-model="temp.timestamp"
+            type="datetime"
+            placeholder="Please pick a date"
+          />
         </el-form-item>
-        <el-form-item label="Status">
+
+        <!-- <el-form-item label="Status">
           <el-select
             v-model="temp.status"
             class="filter-item"
@@ -271,16 +317,16 @@
               :value="item"
             />
           </el-select>
-        </el-form-item>
+        </el-form-item> -->
 
-        <el-form-item label="Remark">
+        <!-- <el-form-item label="Remark">
           <el-input
             v-model="temp.remark"
             :autosize="{ minRows: 2, maxRows: 4}"
             type="textarea"
             placeholder="Please input"
           />
-        </el-form-item>
+        </el-form-item> -->
       </el-form>
       <div
         slot="footer"
@@ -368,7 +414,7 @@ export default {
       statusOptions: ['published', 'draft', 'deleted'],
       temp: {
         id: undefined,
-        remark: '',
+        // remark: '',
         timestamp: new Date(),
         title: '',
         type: '',
@@ -410,13 +456,13 @@ export default {
       this.listQuery.page = 1
       this.getList()
     },
-    handleModifyStatus(row, status) {
-      this.$message({
-        message: '操作Success',
-        type: 'success'
-      })
-      row.status = status
-    },
+    // handleModifyStatus(row, status) {
+    //   this.$message({
+    //     message: '操作Success',
+    //     type: 'success'
+    //   })
+    //   row.status = status
+    // },
     sortChange(data) {
       const { prop, order } = data
       if (prop === 'id') {
@@ -434,7 +480,7 @@ export default {
     resetTemp() {
       this.temp = {
         id: undefined,
-        remark: '',
+        // remark: '',
         timestamp: new Date(),
         title: '',
         status: 'published',
@@ -454,16 +500,18 @@ export default {
         if (valid) {
           this.temp.id = parseInt(Math.random() * 100) + 1024 // mock a id
           this.temp.standard_number = 'vue-element-admin'
-          createArticle(this.temp).then(() => {
-            this.list.unshift(this.temp)
-            this.dialogFormVisible = false
-            this.$notify({
-              title: 'Success',
-              message: 'Created Successfully',
-              type: 'success',
-              duration: 2000
+          this.temp.category = 'vue-element-admin'
+          this.temp.status2 = 'vue-element-admin',
+            createArticle(this.temp).then(() => {
+              this.list.unshift(this.temp)
+              this.dialogFormVisible = false
+              this.$notify({
+                title: 'Success',
+                message: 'Created Successfully',
+                type: 'success',
+                duration: 2000
+              })
             })
-          })
         }
       })
     },

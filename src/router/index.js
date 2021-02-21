@@ -51,8 +51,9 @@ export const constantRoutes = [{
       name: 'HoistingSafetyEvaluation',
       component: () => import('@/views/hoisting-safety-evaluation/index'),
       meta: {
-        title: '吊装安全评价系统',
-        // icon: 'dashboard'
+        title: '首页',
+        // icon: 'dashboard',
+        icon: 'el-icon-s-home'
       }
     }]
   },
@@ -64,7 +65,7 @@ export const constantRoutes = [{
     name: 'DataManagement',
     meta: {
       title: '数据管理模块',
-      icon: 'el-icon-s-help'
+      icon: 'el-icon-help'
     },
     children: [{
         path: 'personnel-information',
@@ -72,7 +73,7 @@ export const constantRoutes = [{
         component: () => import('@/views/personnel-information/index'),
         meta: {
           title: '人员信息',
-          icon: 'table'
+          icon: 'el-icon-data-analysis'
         }
       },
       {
@@ -81,7 +82,7 @@ export const constantRoutes = [{
         component: () => import('@/views/table/index'),
         meta: {
           title: '人员信息-Table',
-          icon: 'table'
+          icon: 'el-icon-data-analysis'
         }
       },
       {
@@ -90,7 +91,7 @@ export const constantRoutes = [{
         component: () => import('@/views/facility-information/index'),
         meta: {
           title: '设备信息',
-          icon: 'table'
+          icon: 'el-icon-data-board'
         }
       },
       {
@@ -114,7 +115,7 @@ export const constantRoutes = [{
       component: () => import('@/views/evaluation-index/index'),
       meta: {
         title: '评价指标体系',
-        icon: 'form'
+        icon: 'el-icon-s-operation'
       }
     }]
   },
@@ -128,7 +129,7 @@ export const constantRoutes = [{
       component: () => import('@/views/evaluation-method/index'),
       meta: {
         title: '评价方法',
-        icon: 'form'
+        icon: 'el-icon-edit-outline'
       }
     }]
   },
@@ -142,7 +143,7 @@ export const constantRoutes = [{
       component: () => import('@/views/evaluation-result/index'),
       meta: {
         title: '评价结果',
-        icon: 'form'
+        icon: 'el-icon-document'
       }
     }]
   },
@@ -155,7 +156,7 @@ export const constantRoutes = [{
     name: 'AuxiliaryInformation',
     meta: {
       title: '辅助信息模块',
-      icon: 'el-icon-s-help'
+      icon: 'el-icon-news'
     },
     children: [{
         path: 'auxiliary-standard-base',
@@ -163,7 +164,7 @@ export const constantRoutes = [{
         component: () => import('@/views/auxiliary-standard-base/index'),
         meta: {
           title: '标准库',
-          icon: 'table'
+          icon: 'el-icon-data-line'
         }
       },
       {
@@ -172,7 +173,16 @@ export const constantRoutes = [{
         component: () => import('@/views/auxiliary-accident-type/index'),
         meta: {
           title: '事故类型',
-          icon: 'table'
+          icon: 'el-icon-notebook-1'
+        }
+      },
+      {
+        path: 'auxiliary-fault-tree-analysis',
+        name: 'AuxiliaryFaultTreeAnalysis',
+        component: () => import('@/views/auxiliary-fault-tree-analysis/index'),
+        meta: {
+          title: '事故树分析',
+          icon: 'tree'
         }
       },
       {
@@ -181,10 +191,24 @@ export const constantRoutes = [{
         component: () => import('@/views/auxiliary-case/index'),
         meta: {
           title: '案例',
-          icon: 'table'
+          icon: 'el-icon-reading'
         }
       }
     ]
+  },
+
+  {
+    path: '/error-log',
+    component: Layout,
+    children: [{
+      path: 'log',
+      component: () => import('@/views/error-log/index'),
+      name: 'ErrorLog',
+      meta: {
+        title: 'Error Log',
+        icon: 'bug'
+      }
+    }]
   },
 
   {

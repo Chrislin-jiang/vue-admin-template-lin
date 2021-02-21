@@ -78,6 +78,7 @@
 
     .is-active>.el-submenu__title {
       color: $subMenuActiveText !important;
+      font-weight: bold;
     }
 
     & .nest-menu .el-submenu>.el-submenu__title,
@@ -191,6 +192,7 @@
     .svg-icon {
       margin-right: 16px;
     }
+
     .sub-el-icon {
       margin-right: 12px;
       margin-left: -2px;

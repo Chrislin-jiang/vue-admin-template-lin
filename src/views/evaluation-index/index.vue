@@ -1,12 +1,14 @@
 <template>
   <div class="app-container">
     <el-table
+      stripe
       v-loading="listLoading"
       :data="list"
       element-loading-text="Loading"
       border
       fit
       highlight-current-row
+      height="550"
     >
       <el-table-column
         align="center"

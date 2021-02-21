@@ -1,12 +1,36 @@
 <template>
-  <div class="sidebar-logo-container" :class="{'collapse':collapse}">
+  <div
+    class="sidebar-logo-container"
+    :class="{'collapse':collapse}"
+  >
     <transition name="sidebarLogoFade">
-      <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
-        <img v-if="logo" :src="logo" class="sidebar-logo">
-        <h1 v-else class="sidebar-title">{{ title }} </h1>
+      <router-link
+        v-if="collapse"
+        key="collapse"
+        class="sidebar-logo-link"
+        to="/"
+      >
+        <img
+          v-if="logo"
+          :src="logo"
+          class="sidebar-logo"
+        >
+        <h1
+          v-else
+          class="sidebar-title"
+        >{{ title }} </h1>
       </router-link>
-      <router-link v-else key="expand" class="sidebar-logo-link" to="/">
-        <img v-if="logo" :src="logo" class="sidebar-logo">
+      <router-link
+        v-else
+        key="expand"
+        class="sidebar-logo-link"
+        to="/"
+      >
+        <img
+          v-if="logo"
+          :src="logo"
+          class="sidebar-logo"
+        >
         <h1 class="sidebar-title">{{ title }} </h1>
       </router-link>
     </transition>
@@ -24,8 +48,8 @@ export default {
   },
   data() {
     return {
-      title: 'Vue Admin Template',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      title: '吊装安全评价系统',
+      logo: 'https://www.zoomlion.com/upload/contents/2015/12/20151222082009_93314.jpg'
     }
   }
 }
@@ -46,7 +70,7 @@ export default {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #2b2f3a;
+  background: #b8dafd;
   text-align: center;
   overflow: hidden;
 
@@ -67,8 +91,9 @@ export default {
       color: #fff;
       font-weight: 600;
       line-height: 50px;
-      font-size: 14px;
-      font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      font-family: STKaiti, STXingkai, Avenir, Helvetica Neue, Arial, Helvetica,
+        sans-serif;
       vertical-align: middle;
     }
   }

@@ -225,6 +225,20 @@ export const constantRoutes = [{
     }]
   },
 
+  {
+    path: '/function-test',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'Function-test',
+      component: () => import('@/views/function-test/index'),
+      meta: {
+        title: '功能测试',
+        icon: 'form'
+      }
+    }]
+  },
+
   // 404 page must be placed at the end !!!
   {
     path: '*',

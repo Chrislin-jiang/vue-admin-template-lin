@@ -19,6 +19,7 @@
         mode="vertical"
       >
         <sidebar-item
+          class="sidebar-item-container"
           v-for="route in routes"
           :key="route.path"
           :item="route"
@@ -69,4 +70,7 @@ export default {
 .sidebar-container {
   box-shadow: 3px 0 5px #e4e4e4;
 }
+/* .sidebar-item-container {
+  border: 1px solid #e4e4e4;
+} */
 </style>

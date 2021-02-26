@@ -70,7 +70,7 @@ export default {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #b8dafd;
+  background: #2dc027;
   text-align: center;
   overflow: hidden;
 

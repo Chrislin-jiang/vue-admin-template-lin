@@ -11,13 +11,13 @@ const users = {
   'admin-token': {
     roles: ['admin'],
     introduction: 'I am a super administrator',
-    avatar: 'http://www.17qq.com/img_qqtouxiang/86724412.jpeg',
+    avatar: 'https://ss0.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2319767624,2230004276&fm=26&gp=0.jpg',
     name: 'Super Admin'
   },
   'editor-token': {
     roles: ['editor'],
     introduction: 'I am an editor',
-    avatar: 'http://www.17qq.com/img_qqtouxiang/86724412.jpeg',
+    avatar: 'https://ss0.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2319767624,2230004276&fm=26&gp=0.jpg',
     name: 'Normal Editor'
   }
 }

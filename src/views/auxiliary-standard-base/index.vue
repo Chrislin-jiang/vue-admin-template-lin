@@ -39,7 +39,7 @@
       <el-button
         v-waves
         class="filter-item"
-        type="primary"
+        type="success"
         icon="el-icon-search"
         @click="handleFilter"
       >
@@ -48,7 +48,7 @@
       <el-button
         class="filter-item"
         style="margin-left: 10px;"
-        type="primary"
+        type="success"
         icon="el-icon-edit"
         @click="handleCreate"
       >
@@ -58,7 +58,7 @@
         v-waves
         :loading="downloadLoading"
         class="filter-item"
-        type="primary"
+        type="success"
         icon="el-icon-download"
         @click="handleDownload"
       >
@@ -200,7 +200,7 @@
       >
         <template slot-scope="{row,$index}">
           <el-button
-            type="primary"
+            type="success"
             size="mini"
             @click="handleUpdate(row)"
           >
@@ -336,7 +336,7 @@
           Cancel
         </el-button>
         <el-button
-          type="primary"
+          type="success"
           @click="dialogStatus==='create'?createData():updateData()"
         >
           Confirm
@@ -369,7 +369,7 @@
         class="dialog-footer"
       >
         <el-button
-          type="primary"
+          type="success"
           @click="dialogPvVisible = false"
         >Confirm</el-button>
       </span>

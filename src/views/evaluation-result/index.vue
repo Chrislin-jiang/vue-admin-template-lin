@@ -1,7 +1,9 @@
 <template>
   <div class="components-container">
-    <aside>
-      编辑
+    <aside class="aside-container">
+      这是一段说明性的文字
+      这是一段说明性的文字
+      这是一段说明性的文字
     </aside>
     <div>
       <tinymce
@@ -32,6 +34,9 @@ export default {
 </script>
 
 <style scoped>
+.aside-container {
+  margin: 20px;
+}
 .editor-content {
   margin-top: 20px;
 }

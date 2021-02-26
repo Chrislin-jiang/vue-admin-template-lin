@@ -90,7 +90,7 @@ export default {
 
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .fta-container {
   font-family: "Times New Roman", Avenir, Helvetica, Arial, sans-serif;
   /* font-family: "Times New Roman", SimSun, Georgia, Serif; 

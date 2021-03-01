@@ -304,29 +304,6 @@
           />
         </el-form-item>
 
-        <!-- <el-form-item label="Status">
-          <el-select
-            v-model="temp.status"
-            class="filter-item"
-            placeholder="Please select"
-          >
-            <el-option
-              v-for="item in statusOptions"
-              :key="item"
-              :label="item"
-              :value="item"
-            />
-          </el-select>
-        </el-form-item> -->
-
-        <!-- <el-form-item label="Remark">
-          <el-input
-            v-model="temp.remark"
-            :autosize="{ minRows: 2, maxRows: 4}"
-            type="textarea"
-            placeholder="Please input"
-          />
-        </el-form-item> -->
       </el-form>
       <div
         slot="footer"
@@ -456,13 +433,6 @@ export default {
       this.listQuery.page = 1
       this.getList()
     },
-    // handleModifyStatus(row, status) {
-    //   this.$message({
-    //     message: '操作Success',
-    //     type: 'success'
-    //   })
-    //   row.status = status
-    // },
     sortChange(data) {
       const { prop, order } = data
       if (prop === 'id') {

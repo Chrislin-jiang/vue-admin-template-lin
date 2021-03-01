@@ -168,6 +168,24 @@ export const constantRoutes = [{
         }
       },
       {
+        path: 'auxiliary-standard-base-test',
+        name: 'AuxiliaryStandardBaseTest',
+        component: () => import('@/views/auxiliary-standard-base-test/index'),
+        meta: {
+          title: '标准库测试',
+          icon: 'el-icon-data-line'
+        }
+      },
+      {
+        path: 'auxiliary-student',
+        name: 'AuxiliaryStudent',
+        component: () => import('@/views/auxiliary-student/index'),
+        meta: {
+          title: '学生管理模块',
+          icon: 'el-icon-data-line'
+        }
+      },
+      {
         path: 'auxiliary-accident-type',
         name: 'AuxiliaryAccidentType',
         component: () => import('@/views/auxiliary-accident-type/index'),

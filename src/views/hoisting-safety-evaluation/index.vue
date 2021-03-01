@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">name: {{ name }}</div>
-    <div>{{ text }}</div>
+    <h2>{{ text }}</h2>
     <div class="card-container">
       <el-card class="box-card">
         <div
@@ -31,8 +31,10 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'HoistingSafetyEvaluation',
-  data: {
-    text: '吊装安全评价系统'
+  data() {
+    return {
+      text: '吊装安全评价系统'
+    }
   },
   computed: {
     ...mapGetters([

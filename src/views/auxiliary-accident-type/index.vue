@@ -69,13 +69,13 @@
               <el-carousel-item>
                 <img
                   src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=691561542,4040503316&fm=15&gp=0.jpg"
-                  alt="机体倾翻事故2"
+                  alt="机体倾翻事故3"
                 >
               </el-carousel-item>
               <el-carousel-item>
                 <img
                   src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20190503%2Fa33b5d5d7d244e3b9f5b7db7ad645aa0.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1616500041&t=91dfd535db23d75779736574ecc33391"
-                  alt="机体倾翻事故2"
+                  alt="机体倾翻事故4"
                 >
               </el-carousel-item>
             </el-carousel>

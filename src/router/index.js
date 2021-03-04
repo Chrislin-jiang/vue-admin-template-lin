@@ -105,7 +105,104 @@ export const constantRoutes = [{
       }
     ]
   },
-
+  {
+    path: '/project-information',
+    component: Layout,
+    redirect: '/project-information/list',
+    name: 'ProjectInformation',
+    meta: {
+      title: '工程信息',
+      icon: 'el-icon-data-analysis'
+    },
+    children: [{
+        path: 'create',
+        component: () => import('@/views/project-information/create'),
+        name: 'CreateArticle',
+        meta: {
+          title: '新增吊装工程',
+          icon: 'edit'
+        }
+      },
+      {
+        path: 'create',
+        component: () => import('@/views/project-information/create'),
+        name: 'CreateArticle',
+        meta: {
+          title: '新增吊装工程',
+          icon: 'edit'
+        }
+      },
+      {
+        path: 'edit/:id(\\d+)',
+        component: () => import('@/views/project-information/edit'),
+        name: 'EditArticle',
+        meta: {
+          title: '编辑吊装工程',
+          noCache: true,
+          activeMenu: '/project-information/list'
+        },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/project-information/list'),
+        name: 'ArticleList',
+        meta: {
+          title: '吊装工程列表',
+          icon: 'list'
+        }
+      },
+      {
+        path: 'list-lin',
+        component: () => import('@/views/project-information/list-lin'),
+        name: 'ArticleListLin',
+        meta: {
+          title: '吊装工程列表-lin',
+          icon: 'list'
+        }
+      }
+    ]
+  },
+  {
+    path: '/project-example',
+    component: Layout,
+    redirect: '/project-example/list',
+    name: 'ProjectExample',
+    meta: {
+      title: '工程信息示例',
+      icon: 'el-icon-data-analysis'
+    },
+    children: [{
+        path: 'create',
+        component: () => import('@/views/project-example/create'),
+        name: 'CreateArticle',
+        meta: {
+          title: 'Create Article',
+          icon: 'edit'
+        }
+      },
+      {
+        path: 'edit/:id(\\d+)',
+        component: () => import('@/views/project-example/edit'),
+        name: 'EditArticle',
+        meta: {
+          title: 'Edit Article',
+          noCache: true,
+          activeMenu: '/project-example/list'
+        },
+        hidden: true
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/project-example/list'),
+        name: 'ArticleList',
+        meta: {
+          title: 'Article List',
+          icon: 'list'
+        }
+      }
+    ]
+  },
   {
     path: '/evaluation-index',
     component: Layout,

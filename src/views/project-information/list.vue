@@ -110,6 +110,7 @@
 <script>
 import { fetchList } from '@/api/article'
 import Pagination from '@/components/Pagination' // Secondary package based on el-pagination
+// import { parseTime } from '@/utils/index.js'
 
 export default {
   name: 'ArticleList',

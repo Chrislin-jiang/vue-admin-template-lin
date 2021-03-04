@@ -1,13 +1,20 @@
 <template>
   <aside>
-    Creating and editing pages cannot be cached by keep-alive because keep-alive include does not currently support
-    caching based on routes, so it is currently cached based on component name. If you want to achieve a similar caching
-    effect, you can use a browser caching scheme such as localStorage. Or do not use keep-alive include to cache all
-    pages directly. See details
-    <a
-      href="https://panjiachen.github.io/vue-element-admin-site/guide/essentials/tags-view.html"
-      target="_blank"
-    >Document</a>
+    请编辑吊装工程的详细信息。
   </aside>
 </template>
+<style scoped>
+aside {
+  font-family: "Times New Roman", Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: "Times New Roman", SimSun, Georgia, Serif; 
+  SimSun 宋体，NSimSun 新宋体，KaiTi 楷体*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  line-height: 25px;
+  /* text-align: center; */
+  color: #2c3e50;
+  /* padding: 30px; */
+}
+</style>
 

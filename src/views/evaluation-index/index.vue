@@ -156,7 +156,7 @@ export default {
       //====分页相关的变量====
       total: 0, //数据的总行数 
       currentpage: 1, //当前的所在的页
-      pagesize: 10, //每页显示多少行数据
+      pagesize: 50, //每页显示多少行数据
 
       rules: {
         indicator: [

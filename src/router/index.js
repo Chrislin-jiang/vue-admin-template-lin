@@ -119,14 +119,14 @@ export const constantRoutes = [{
         component: () => import('@/views/project-information/create'),
         name: 'CreateArticle',
         meta: {
-          title: '新增吊装工程',
+          title: '新增',
           icon: 'edit'
         }
       },
       {
-        path: 'create',
-        component: () => import('@/views/project-information/create'),
-        name: 'CreateArticle',
+        path: 'create-project',
+        component: () => import('@/views/project-information/create-project'),
+        name: 'CreateArticleProject',
         meta: {
           title: '新增吊装工程',
           icon: 'edit'

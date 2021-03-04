@@ -33,11 +33,17 @@
                   @click="getAllProjects()"
                 >全部
                 </el-button>
-                <el-button
+                <!-- <el-button
                   type="success"
                   icon="el-icon-circle-plus-outline"
                   @click="addProject()"
-                >添加</el-button>
+                >添加</el-button> -->
+                <router-link to="/project-information/create-project">
+                  <el-button
+                    type="success"
+                    icon="el-icon-circle-plus-outline"
+                  >添加</el-button>
+                </router-link>
               </el-button-group>
             </el-col>
             <el-col :span="2">
@@ -140,12 +146,20 @@
                 round
                 @click="updateProject(scope.row)"
               >编辑</el-button>
-              <el-button
+              <!-- <el-button
                 type="danger"
                 size="mini"
                 round
                 @click="deleteProject(scope.row)"
-              >评价</el-button>
+              >评价</el-button> -->
+              <router-link to="/evaluation-method/index">
+                <el-button
+                  style="margin-left:8px"
+                  type="danger"
+                  size="mini"
+                  round
+                >评价</el-button>
+              </router-link>
               <!-- <el-button
                 type="danger"
                 icon="el-icon-delete"

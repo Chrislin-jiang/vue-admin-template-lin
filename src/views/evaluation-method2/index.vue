@@ -46,8 +46,11 @@
           </el-row>
         </el-form>
         <!-- 表格 -->
-        <el-row>
-          <el-col :span="22">
+        <el-row
+          type="flex"
+          justify="center"
+        >
+          <el-col :span="9">
             <el-table
               :data="pageEvaluationIndex"
               border
@@ -61,26 +64,32 @@
                 type="index"
                 label="序号"
                 align="center"
-                width="60"
+                width="70"
               >
               </el-table-column>
               <el-table-column
                 prop="indicator"
                 label="吊装安全性评价指标"
-                width="150"
+                width="210"
               >
               </el-table-column>
               <el-table-column
+                prop="weight"
+                label="权重"
+                width="87"
+              >
+              </el-table-column>
+              <!-- <el-table-column
                 prop="description"
                 label="详细描述"
                 width="600"
               >
-              </el-table-column>
+              </el-table-column> -->
 
             </el-table>
           </el-col>
-          <el-col :span="2">
-            <!-- <table
+          <el-col :span="15">
+            <table
               border="1"
               class="pure-table"
             >
@@ -105,7 +114,7 @@
                   <td><input v-model="item[4]"></td>
                 </tr>
               </tbody>
-            </table> -->
+            </table>
           </el-col>
         </el-row>
         <!-- 分页 -->
@@ -141,6 +150,12 @@
 
       </el-main>
     </el-container>
+    <el-button
+      type="success"
+      style="margin-left:200px"
+      @click='getData'
+    >获取数据</el-button>
+    <el-button type="success">点击计算</el-button>
   </div>
 </template>
 <script>
@@ -196,30 +211,30 @@ export default {
           { required: true, message: '吊装安全性评价指标不能为空', trigger: 'blur' },
           { validator: rulesStandardNnumber, trigger: 'blur' }, //校验吊装安全性评价指标是否存在！
         ],
-        description: [
-          { required: true, message: '详细描述不能为空', trigger: 'blur' },
-        ]
+        // description: [
+        //   { required: true, message: '详细描述不能为空', trigger: 'blur' },
+        // ]
       }
     }
   },
-  // computed: {
-  //   formData: function () {
-  //     return Array.from(new Array(68).fill(), () => new Array(6).fill())
-  //   }
-  // },
+  computed: {
+    formData: function () {
+      return Array.from(new Array(68).fill(), () => new Array(6).fill())
+    }
+  },
   mounted() {
     //自动加载数据
     this.getEvaluationIndex();
   },
   methods: {
-    // getData() {
-    //   let data = []
-    //   this.formData.forEach(item => {
-    //     data.push(item)
-    //   })
-    //   alert(JSON.stringify(data))
-    //   // alert(data)
-    // },
+    getData() {
+      let data = []
+      this.formData.forEach(item => {
+        data.push(item)
+      })
+      alert(JSON.stringify(data))
+      // alert(data)
+    },
     //获取所有标准信息
     getEvaluationIndex: function () {
       //记录this的地址
@@ -419,7 +434,7 @@ th {
   margin: 0;
   overflow: visible;
   padding: 0.5em 1em;
-  width: 50px;
+  width: 80px;
   height: 36.5px;
 }
 
@@ -435,6 +450,6 @@ th {
 }
 input {
   /* width: 30px; */
-  width: 130%;
+  width: 100%;
 }
 </style>

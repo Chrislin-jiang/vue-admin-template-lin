@@ -731,7 +731,7 @@ export default {
       axios(
         {
           method: 'post',
-          url: that.baseURL + 'excel/import/',
+          url: that.baseURL + 'excel/import/project/',
           data: fileReq
         }
       ).then(res => {
@@ -770,13 +770,14 @@ export default {
     },
     exportToExcel() {
       let that = this
-      axios.get(that.baseURL + 'excel/export/')
+      axios.get(that.baseURL + 'excel/export/project/')
         .then(res => {
           if (res.data.code === 1) {
             //拼接excel 的完整URL
             let url = that.baseURL + 'media/' + res.data.equipment_capacity;
             //下载
             window.open(url);
+            alert("下载成功")
           } else {
             that.$message.error("导出Excel出现异常！");
           }

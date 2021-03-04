@@ -230,6 +230,19 @@ export const constantRoutes = [{
       }
     }]
   },
+  {
+    path: '/evaluation-method2',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'EvaluationMethod2',
+      component: () => import('@/views/evaluation-method2/index'),
+      meta: {
+        title: '评价方法2',
+        icon: 'el-icon-edit-outline'
+      }
+    }]
+  },
 
   {
     path: '/evaluation-result',

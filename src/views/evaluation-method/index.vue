@@ -164,6 +164,7 @@
 export default {
   data() {
     return {
+      numberscore: '1',
       active: 0,
       tableData: [{
         id: '1',

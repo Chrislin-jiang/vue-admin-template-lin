@@ -7,10 +7,12 @@
       class="login-form"
       auto-complete="on"
       label-position="left"
+      style="background-color:#fff; opacity: 0.7;"
     >
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h2 class="title">吊装安全性评价系统</h2>
+        <!-- <h3 class="title">登录</h3> -->
       </div>
 
       <el-form-item prop="username">
@@ -54,13 +56,13 @@
       <el-button
         :loading="loading"
         type="success"
-        style="width:100%;margin-bottom:30px;"
+        style="width:100%;margin-top:10px;margin-bottom:10px;font-family: Times New Roman, STKaiti, STXingkai, Avenir, Helvetica Neue,Arial, Helvetica, sans-serif;font-size:23px"
         @click.native.prevent="handleLogin"
-      >Login</el-button>
+      >登 录</el-button>
 
       <div class="tips">
-        <span style="margin-right:20px;">username: admin</span>
-        <span> password: any</span>
+        <span style="margin-right:20px;">用户名: admin</span>
+        <span> 密码: any</span>
       </div>
 
     </el-form>
@@ -75,14 +77,14 @@ export default {
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
-        callback(new Error('Please enter the correct user name'))
+        callback(new Error('请输入正确的用户名'))
       } else {
         callback()
       }
     }
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'))
+        callback(new Error('密码至少为6为数字'))
       } else {
         callback()
       }
@@ -144,31 +146,38 @@ export default {
 /* 修复input 背景不协调 和光标变色 */
 /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
-$bg: #283443;
-$light_gray: #fff;
-$cursor: #fff;
+// $bg: #283443;
+$bg: #fffffd;
+$light_gray: rgb(63, 177, 78);
+$cursor: rgb(32, 153, 42);
 
 @supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
   .login-container .el-input input {
     color: $cursor;
+    font-family: Times New Roman, STKaiti, STXingkai, Avenir, Helvetica Neue,
+      Arial, Helvetica, sans-serif;
   }
 }
 
 /* reset element-ui css */
 .login-container {
   .el-input {
+    font-family: Times New Roman, STKaiti, STXingkai, Avenir, Helvetica Neue,
+      Arial, Helvetica, sans-serif;
     display: inline-block;
     height: 47px;
     width: 85%;
 
     input {
+      font-size: 20px;
       background: transparent;
-      border: 0px;
+      border: 1px;
       -webkit-appearance: none;
       border-radius: 0px;
-      padding: 12px 5px 12px 15px;
+      padding: 12px 12px 12px 15px;
       color: $light_gray;
       height: 47px;
+      line-height: 70px;
       caret-color: $cursor;
 
       &:-webkit-autofill {
@@ -179,38 +188,44 @@ $cursor: #fff;
   }
 
   .el-form-item {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border: 2px solid rgba(101, 161, 95, 0.1);
+    background: rgba(78, 78, 78, 0.1);
+    border-radius: 8px;
     color: #454545;
   }
 }
 </style>
 
 <style lang="scss" scoped>
-$bg: #2d3a4b;
-$dark_gray: #889aa4;
-$light_gray: #eee;
+// $bg: #2d3a4b;
+$bg: #b1c561;
+$dark_gray: #4c9c3c;
+$light_gray: rgb(54, 150, 66);
 
 .login-container {
   min-height: 100%;
   width: 100%;
+  font-family: STKaiti, STXingkai, Avenir, Helvetica Neue, Arial, Helvetica,
+    sans-serif;
   background-color: $bg;
   overflow: hidden;
-
+  background-image: url("../../assets/images/crane1.jpeg");
+  background-repeat: no-repeat;
+  // background-size: 100%;
+  // 表单位置
   .login-form {
     position: relative;
     width: 520px;
     max-width: 100%;
-    padding: 160px 35px 0;
-    margin: 0 auto;
+    padding: 20px 35px 0;
+    margin: 120px 140px auto auto;
     overflow: hidden;
   }
 
   .tips {
-    font-size: 14px;
-    color: #fff;
-    margin-bottom: 10px;
+    font-size: 17px;
+    color: rgb(58, 124, 63);
+    margin-bottom: 20px;
 
     span {
       &:first-of-type {
@@ -223,17 +238,21 @@ $light_gray: #eee;
     padding: 6px 5px 6px 15px;
     color: $dark_gray;
     vertical-align: middle;
-    width: 30px;
+    width: 10px;
     display: inline-block;
   }
 
   .title-container {
     position: relative;
+    // height: 10px;
 
     .title {
-      font-size: 26px;
+      font-size: 40px;
       color: $light_gray;
-      margin: 0px auto 40px auto;
+      font-family: STKaiti, STXingkai, Avenir, Helvetica Neue, Arial, Helvetica,
+        sans-serif;
+      padding: 0px auto 40px auto;
+      // margin: 0px auto 40px auto;
       text-align: center;
       font-weight: bold;
     }
@@ -243,7 +262,7 @@ $light_gray: #eee;
     position: absolute;
     right: 10px;
     top: 7px;
-    font-size: 16px;
+    font-size: 20px;
     color: $dark_gray;
     cursor: pointer;
     user-select: none;

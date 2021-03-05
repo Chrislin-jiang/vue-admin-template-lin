@@ -271,6 +271,19 @@ export const constantRoutes = [{
       }
     }]
   },
+  {
+    path: '/evaluation-method-dea',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'EvaluationMethodDEA',
+      component: () => import('@/views/evaluation-method-dea/index'),
+      meta: {
+        title: '数据包络分析法',
+        icon: 'el-icon-edit-outline'
+      }
+    }]
+  },
 
   {
     path: '/evaluation-result',

@@ -245,6 +245,34 @@ export const constantRoutes = [{
   },
 
   {
+    path: '/evaluation-method3',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'EvaluationMethod3',
+      component: () => import('@/views/evaluation-method3/index'),
+      meta: {
+        title: '评价方法3',
+        icon: 'el-icon-edit-outline'
+      }
+    }]
+  },
+
+  {
+    path: '/evaluation-method4-dea',
+    component: Layout,
+    children: [{
+      path: 'index',
+      name: 'EvaluationMethod4DEA',
+      component: () => import('@/views/evaluation-method4-dea/index'),
+      meta: {
+        title: '评价方法4DEA',
+        icon: 'el-icon-edit-outline'
+      }
+    }]
+  },
+
+  {
     path: '/evaluation-result',
     component: Layout,
     children: [{

@@ -3,52 +3,10 @@
     <div class="accidentType-detail">
       <!-- 1 -->
       <el-row :gutter="20">
-        <el-col :span="12">
-          文字文字
-        </el-col>
-        <el-col :span="12">
-          <div class="grid-content bg-purple">
-            <el-carousel
-              :interval="5000"
-              arrow="always"
-            >
-              <el-carousel-item
-                v-for="item in 4"
-                :key="item"
-              >
-                <h3>{{ item }}</h3>
-              </el-carousel-item>
-            </el-carousel>
-          </div>
-        </el-col>
-      </el-row>
-      <!-- 2 -->
-      <el-row :gutter="20">
-        <el-col :span="12">
-          <div class="grid-content bg-purple">
-            <el-carousel
-              :interval="5000"
-              arrow="always"
-            >
-              <el-carousel-item
-                v-for="item in 4"
-                :key="item"
-              >
-                <h3>{{ item }}</h3>
-              </el-carousel-item>
-            </el-carousel>
-          </div>
-        </el-col>
-        <el-col :span="12">
-          文字文字
-        </el-col>
-      </el-row>
-      <!-- 3 -->
-      <el-row :gutter="20">
-        <el-col :span="12">
-          机体倾翻事故
-        </el-col>
-        <el-col :span="12">
+        <!-- <el-col :span="12">
+          挤压碰撞事故
+        </el-col> -->
+        <el-col :span="8">
           <div class="grid-content bg-purple">
             <el-carousel
               :interval="5000"
@@ -56,35 +14,99 @@
             >
               <el-carousel-item>
                 <img
-                  src="http://5b0988e595225.cdn.sohucs.com/images/20200423/8b3c1052eda34887b4960d9297e0481f.jpeg"
+                  src="../../assets/images/accident1-1.jpg"
+                  alt="挤压碰撞事故1"
+                >
+              </el-carousel-item>
+              <el-carousel-item>
+                <img
+                  src="../../assets/images/accident1-2.jpg"
+                  alt="挤压碰撞事故2"
+                >
+              </el-carousel-item>
+            </el-carousel>
+          </div>
+          <div>挤压碰撞事故</div>
+        </el-col>
+        <!-- </el-row> -->
+        <!-- 2 -->
+        <!-- <el-row :gutter="20"> -->
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            <el-carousel
+              :interval="5000"
+              arrow="always"
+            >
+              <el-carousel-item>
+                <img
+                  src="../../assets/images/accident2-1.jpg"
+                  alt="吊具/物坠落事故1"
+                >
+              </el-carousel-item>
+              <el-carousel-item>
+                <img
+                  src="../../assets/images/accident2-2.jpg"
+                  alt="吊具/物坠落事故2"
+                >
+              </el-carousel-item>
+              <el-carousel-item>
+                <img
+                  src="../../assets/images/accident2-4.jpg"
+                  alt="吊具/物坠落事故4"
+                >
+              </el-carousel-item>
+            </el-carousel>
+          </div>
+          <div>吊具/物坠落事故</div>
+
+        </el-col>
+        <!-- <el-col :span="12">
+          吊具/物坠落事故
+        </el-col> -->
+        <!-- </el-row> -->
+        <!-- 3 -->
+        <!-- <el-row :gutter="20"> -->
+        <!-- <el-col :span="12">
+          机体倾翻事故
+        </el-col> -->
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            <el-carousel
+              :interval="5000"
+              arrow="always"
+            >
+              <el-carousel-item>
+                <img
+                  src="../../assets/images/accident3-1.jpeg"
                   alt="机体倾翻事故1"
                 >
               </el-carousel-item>
               <el-carousel-item>
                 <img
-                  src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp3.ssl.cdn.btime.com%2Ft0130eab6cd8195765e.jpg%3Fsize%3D695x433&refer=http%3A%2F%2Fp3.ssl.cdn.btime.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1616500041&t=8e09d01a4f5217bc06cde668d9d3188f"
+                  src="../../assets/images/accident3-2.jpg"
                   alt="机体倾翻事故2"
                 >
               </el-carousel-item>
               <el-carousel-item>
                 <img
-                  src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=691561542,4040503316&fm=15&gp=0.jpg"
+                  src="../../assets/images/accident3-3.jpg"
                   alt="机体倾翻事故3"
                 >
               </el-carousel-item>
               <el-carousel-item>
                 <img
-                  src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20190503%2Fa33b5d5d7d244e3b9f5b7db7ad645aa0.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1616500041&t=91dfd535db23d75779736574ecc33391"
+                  src="../../assets/images/accident3-4.jpg"
                   alt="机体倾翻事故4"
                 >
               </el-carousel-item>
             </el-carousel>
           </div>
+          <div>机体倾翻事故</div>
         </el-col>
-      </el-row>
-      <!-- 4 -->
-      <el-row :gutter="20">
-        <el-col :span="12">
+        <!-- </el-row> -->
+        <!-- 4 -->
+        <!-- <el-row :gutter="20"> -->
+        <el-col :span="8">
           <div class="grid-content bg-purple">
             <el-carousel
               :interval="5000"
@@ -98,17 +120,18 @@
               </el-carousel-item>
             </el-carousel>
           </div>
+          <div>高处坠落</div>
         </el-col>
-        <el-col :span="12">
-          文字文字
-        </el-col>
-      </el-row>
-      <!-- 5 -->
-      <el-row :gutter="20">
-        <el-col :span="12">
-          文字文字
-        </el-col>
-        <el-col :span="12">
+        <!-- <el-col :span="12">
+          高处坠落
+        </el-col> -->
+        <!-- </el-row> -->
+        <!-- 5 -->
+        <!-- <el-row :gutter="20"> -->
+        <!-- <el-col :span="12">
+          触电事故
+        </el-col> -->
+        <el-col :span="8">
           <div class="grid-content bg-purple">
             <el-carousel
               :interval="5000"
@@ -122,6 +145,7 @@
               </el-carousel-item>
             </el-carousel>
           </div>
+          <div>触电事故</div>
         </el-col>
       </el-row>
     </div>
@@ -179,11 +203,15 @@ export default {
   margin: 0;
 }
 
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
+// .el-carousel__item:nth-child(2n) {
+//   background-color: #99a9bf;
+// }
 
-.el-carousel__item:nth-child(2n + 1) {
-  background-color: #d3dce6;
+// .el-carousel__item:nth-child(2n + 1) {
+//   background-color: #d3dce6;
+// }
+.el-carousel-item .img {
+  width: 100%;
+  height: auto;
 }
 </style>

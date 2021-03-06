@@ -117,7 +117,7 @@
           @click="addProject()"
         >添加</el-button> -->
         <el-button
-          type="primary"
+          type="success"
           v-show="!isView"
           @click="submitProjectForm('projectForm')"
         >确 定</el-button>
